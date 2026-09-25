@@ -36,8 +36,9 @@ _(none detected)_
 
 ## Possible Domains
 
-_(none detected)_
+- routes
 
 ## Open Questions
 
+- Confirm whether the 'routes' domain reflects a real bounded context.
 - No test directory detected — confirm how this project is tested.

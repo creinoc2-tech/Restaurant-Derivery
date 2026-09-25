@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "generatedAt": "2026-09-23T23:56:10.734Z",
+  "generatedAt": "2026-09-24T02:33:16.153Z",
   "project": {
     "name": "frontend",
     "state": "new",
@@ -28,10 +28,225 @@
   },
   "knowledge": {
     "summary": "> What is true about this product right now.",
-    "roadmapSummary": "> What we intend to build and why.",
+    "roadmapSummary": "Generado con el Roadmap Agent de Kaddo. Las iniciativas y work items de abajo son **candidatos**\npara revisión humana — no compromisos finales.",
     "inventoryAvailable": true,
-    "workItems": [],
-    "artifacts": []
+    "workItems": [
+      {
+        "id": "WI-001",
+        "type": "feature",
+        "title": "Construir el catálogo de restaurantes del cliente (shell inicial)",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — experiencia del cliente"
+        ]
+      },
+      {
+        "id": "WI-002",
+        "type": "feature",
+        "title": "Construir la página de detalle de restaurante con su menú",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — experiencia del cliente"
+        ]
+      },
+      {
+        "id": "WI-003",
+        "type": "chore",
+        "title": "Instalar dependencias base y crear la estructura de carpetas por capas",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — plataforma técnica"
+        ]
+      },
+      {
+        "id": "WI-004",
+        "type": "chore",
+        "title": "Configurar pruebas con Vitest y Testing Library",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K1",
+        "domains": [
+          "Frontend — plataforma técnica"
+        ]
+      },
+      {
+        "id": "WI-005",
+        "type": "feature",
+        "title": "Crear router y layouts por rol (cliente, restaurante, repartidor, admin)",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — plataforma técnica"
+        ]
+      },
+      {
+        "id": "WI-006",
+        "type": "spike",
+        "title": "Spike — modelo de datos y decisiones abiertas de Supabase",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Backend como servicio — datos y seguridad"
+        ]
+      },
+      {
+        "id": "WI-007",
+        "type": "chore",
+        "title": "Configurar cliente Supabase y variables de entorno",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Backend como servicio — datos y seguridad"
+        ]
+      },
+      {
+        "id": "WI-008",
+        "type": "feature",
+        "title": "Migraciones iniciales de roles, restaurantes y menú con RLS",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Backend como servicio — datos y seguridad"
+        ]
+      },
+      {
+        "id": "WI-009",
+        "type": "feature",
+        "title": "Implementar AuthContext, login/registro y ProtectedRoute por rol",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Frontend + Supabase Auth"
+        ]
+      },
+      {
+        "id": "WI-010",
+        "type": "feature",
+        "title": "Carrito de un solo restaurante con Zustand",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Pedidos — cliente"
+        ]
+      },
+      {
+        "id": "WI-011",
+        "type": "spike",
+        "title": "Spike — proveedor de mapas y cálculo de costo de envío",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Pedidos — cliente"
+        ]
+      },
+      {
+        "id": "WI-012",
+        "type": "feature",
+        "title": "Checkout y creación de pedido mediante RPC atómica",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Pedidos — cliente"
+        ]
+      },
+      {
+        "id": "WI-013",
+        "type": "feature",
+        "title": "Seguimiento del estado del pedido en tiempo real",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Pedidos — cliente"
+        ]
+      },
+      {
+        "id": "WI-014",
+        "type": "feature",
+        "title": "Gestión de menú del restaurante (alta, edición y baja de platillos)",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — restaurante"
+        ]
+      },
+      {
+        "id": "WI-015",
+        "type": "feature",
+        "title": "Bandeja de pedidos entrantes con cambio de estado",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Frontend — restaurante"
+        ]
+      },
+      {
+        "id": "WI-016",
+        "type": "feature",
+        "title": "Panel de repartidor con pedidos asignados y actualización de estado",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Frontend — repartidor"
+        ]
+      },
+      {
+        "id": "WI-017",
+        "type": "feature",
+        "title": "Aprobación y suspensión de restaurantes",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K2",
+        "domains": [
+          "Frontend — administración"
+        ]
+      },
+      {
+        "id": "WI-018",
+        "type": "feature",
+        "title": "Listado general de pedidos y cálculo de comisiones",
+        "status": "draft",
+        "lifecycle": "draft",
+        "knowledgeLevel": "K3",
+        "domains": [
+          "Frontend — administración"
+        ]
+      }
+    ],
+    "artifacts": [
+      {
+        "id": "WI-004",
+        "type": "chore",
+        "title": "Configurar pruebas con Vitest y Testing Library",
+        "summary": "El proyecto no tiene pruebas ni script `test` (`kaddo scan` reporta 'No test directory detected'), así que ningún Work Item puede validarse de forma automática",
+        "codeGlobs": [
+          "package.json",
+          "package-lock.json",
+          "vite.config.ts",
+          "tsconfig.app.json",
+          "eslint.config.js",
+          "src/App.test.tsx",
+          "src/test/**"
+        ]
+      }
+    ]
   },
   "layers": [
     {
@@ -52,42 +267,68 @@
       "layer": "Tech",
       "status": "Structured",
       "detected": [
+        "architecture.md",
         "codebase.md",
         "knowledge.md"
       ]
     },
     {
       "layer": "Delivery",
-      "status": "Partial",
+      "status": "Traceable",
       "detected": [
+        "WI-001-construir-el-catalogo-de-restaurantes-del-cliente.md",
+        "WI-002-construir-la-pagina-de-detalle-de-restaurante-con.md",
+        "WI-003-instalar-dependencias-base-y-crear-la-estructura-d.md",
+        "WI-004-configurar-pruebas-con-vitest-y-testing-library.md",
+        "WI-005-crear-router-y-layouts-por-rol-cliente-restaurante.md",
+        "WI-006-spike-modelo-de-datos-y-decisiones-abiertas-de-sup.md",
+        "WI-007-configurar-cliente-supabase-y-variables-de-entorno.md",
+        "WI-008-migraciones-iniciales-de-roles-restaurantes-y-menu.md",
+        "WI-009-implementar-authcontext-login-registro-y-protected.md",
+        "WI-010-carrito-de-un-solo-restaurante-con-zustand.md",
+        "WI-011-spike-proveedor-de-mapas-y-calculo-de-costo-de-env.md",
+        "WI-012-checkout-y-creacion-de-pedido-mediante-rpc-atomica.md",
+        "WI-013-seguimiento-del-estado-del-pedido-en-tiempo-real.md",
+        "WI-014-gestion-de-menu-del-restaurante-alta-edicion-y-baj.md",
+        "WI-015-bandeja-de-pedidos-entrantes-con-cambio-de-estado.md",
+        "WI-016-panel-de-repartidor-con-pedidos-asignados-y-actual.md",
+        "WI-017-aprobacion-y-suspension-de-restaurantes.md",
+        "WI-018-listado-general-de-pedidos-y-calculo-de-comisiones.md",
         "roadmap.md"
       ]
     }
   ],
   "roadmap": {
     "present": true,
-    "candidates": 0,
-    "materialized": 0,
+    "candidates": 18,
+    "materialized": 18,
     "remaining": 0
   },
   "phase": {
-    "phase": "Delivery Preparation",
+    "phase": "Active Delivery",
     "reasons": [
       "Roadmap available",
-      "0 materialized work item(s)"
+      "18 materialized work item(s)",
+      "draft: 18",
+      "Ownership coverage 6%"
     ],
     "recommendedAgents": [
-      "kaddo create --from roadmap",
-      "work-item-agent"
+      "work-item-agent",
+      "kaddo owners suggest"
     ],
-    "nextStep": "Run `kaddo create --from roadmap`, then refine with work-item-agent",
+    "nextStep": "Refine WI-001 from draft to ready",
     "llmInstructions": [
-      "Materialize roadmap candidates with `kaddo create --from roadmap`.",
-      "Use the work-item-agent to refine them.",
-      "Do not implement yet."
+      "Refine draft Work Items to ready.",
+      "Use the work-item-agent.",
+      "Do not implement unless the user explicitly asks.",
+      "Ownership is incomplete — propose `code:` globs (run `kaddo owners suggest`)."
     ]
   },
-  "deliveryMix": {},
+  "deliveryMix": {
+    "feature": 13,
+    "chore": 3,
+    "spike": 2
+  },
   "external": [],
   "graph": null,
   "graphHints": null,
@@ -100,21 +341,20 @@
     "work-item-refinement"
   ],
   "mappedModules": [],
-  "missing": [
-    "No work items found."
-  ],
+  "missing": [],
   "handoff": {
     "recommendedAgents": [
-      "kaddo create --from roadmap",
-      "work-item-agent"
+      "work-item-agent",
+      "kaddo owners suggest"
     ],
     "nextSteps": [
-      "Run `kaddo create --from roadmap`, then refine with work-item-agent"
+      "Refine WI-001 from draft to ready"
     ],
     "instructions": [
-      "Materialize roadmap candidates with `kaddo create --from roadmap`.",
-      "Use the work-item-agent to refine them.",
-      "Do not implement yet."
+      "Refine draft Work Items to ready.",
+      "Use the work-item-agent.",
+      "Do not implement unless the user explicitly asks.",
+      "Ownership is incomplete — propose `code:` globs (run `kaddo owners suggest`)."
     ],
     "operatingRules": [
       "**Never run `git commit`, `git push` or `git merge` without explicit human confirmation.**",

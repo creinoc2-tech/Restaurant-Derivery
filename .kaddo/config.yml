@@ -4,7 +4,8 @@ project:
   state: new
   structure: monorepo
   language: es
-  domains: []
+  domains:
+    - "# routes"
 team:
   size: small
 knowledge:

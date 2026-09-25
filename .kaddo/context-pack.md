@@ -20,22 +20,24 @@
 
 ## Current Phase
 
-Phase: Delivery Preparation
+Phase: Active Delivery
 
 Reason:
 
 - Roadmap available
-- 0 materialized work item(s)
+- 18 materialized work item(s)
+- draft: 18
+- Ownership coverage 6%
 
-Recommended next: kaddo create --from roadmap, work-item-agent
+Recommended next: work-item-agent, kaddo owners suggest
 
-Next step: Run `kaddo create --from roadmap`, then refine with work-item-agent
+Next step: Refine WI-001 from draft to ready
 
 ## Knowledge Layers
 
 Project knowledge is organized in four layers: **Business → Product → Tech → Delivery**.
 
-Knowledge maturity — Business: Consolidated · Product: Consolidated · Tech: Structured · Delivery: Partial
+Knowledge maturity — Business: Consolidated · Product: Consolidated · Tech: Structured · Delivery: Traceable
 
 ### Business — Consolidated
 - ✓ business.md
@@ -44,10 +46,29 @@ Knowledge maturity — Business: Consolidated · Product: Consolidated · Tech: 
 - ✓ product.md
 
 ### Tech — Structured
+- ✓ architecture.md
 - ✓ codebase.md
 - ✓ knowledge.md
 
-### Delivery — Partial
+### Delivery — Traceable
+- ✓ WI-001-construir-el-catalogo-de-restaurantes-del-cliente.md
+- ✓ WI-002-construir-la-pagina-de-detalle-de-restaurante-con.md
+- ✓ WI-003-instalar-dependencias-base-y-crear-la-estructura-d.md
+- ✓ WI-004-configurar-pruebas-con-vitest-y-testing-library.md
+- ✓ WI-005-crear-router-y-layouts-por-rol-cliente-restaurante.md
+- ✓ WI-006-spike-modelo-de-datos-y-decisiones-abiertas-de-sup.md
+- ✓ WI-007-configurar-cliente-supabase-y-variables-de-entorno.md
+- ✓ WI-008-migraciones-iniciales-de-roles-restaurantes-y-menu.md
+- ✓ WI-009-implementar-authcontext-login-registro-y-protected.md
+- ✓ WI-010-carrito-de-un-solo-restaurante-con-zustand.md
+- ✓ WI-011-spike-proveedor-de-mapas-y-calculo-de-costo-de-env.md
+- ✓ WI-012-checkout-y-creacion-de-pedido-mediante-rpc-atomica.md
+- ✓ WI-013-seguimiento-del-estado-del-pedido-en-tiempo-real.md
+- ✓ WI-014-gestion-de-menu-del-restaurante-alta-edicion-y-baj.md
+- ✓ WI-015-bandeja-de-pedidos-entrantes-con-cambio-de-estado.md
+- ✓ WI-016-panel-de-repartidor-con-pedidos-asignados-y-actual.md
+- ✓ WI-017-aprobacion-y-suspension-de-restaurantes.md
+- ✓ WI-018-listado-general-de-pedidos-y-calculo-de-comisiones.md
 - ✓ roadmap.md
 
 ## Technical Inventory
@@ -64,19 +85,45 @@ Knowledge maturity — Business: Consolidated · Product: Consolidated · Tech: 
 
 ## Roadmap
 
-- Roadmap candidates: 0
-- Materialized work items: 0
+- Roadmap candidates: 18
+- Materialized work items: 18
 - Remaining candidates: 0
 
-> What we intend to build and why.
+Generado con el Roadmap Agent de Kaddo. Las iniciativas y work items de abajo son **candidatos**
+para revisión humana — no compromisos finales.
 
 ## Active Work Items
 
-No active work items found.
+- WI-001 [feature] [K2] (draft) — Construir el catálogo de restaurantes del cliente (shell inicial) · domains: Frontend — experiencia del cliente
+- WI-002 [feature] [K2] (draft) — Construir la página de detalle de restaurante con su menú · domains: Frontend — experiencia del cliente
+- WI-003 [chore] [K2] (draft) — Instalar dependencias base y crear la estructura de carpetas por capas · domains: Frontend — plataforma técnica
+- WI-004 [chore] [K1] (draft) — Configurar pruebas con Vitest y Testing Library · domains: Frontend — plataforma técnica
+- WI-005 [feature] [K2] (draft) — Crear router y layouts por rol (cliente, restaurante, repartidor, admin) · domains: Frontend — plataforma técnica
+- WI-006 [spike] [K3] (draft) — Spike — modelo de datos y decisiones abiertas de Supabase · domains: Backend como servicio — datos y seguridad
+- WI-007 [chore] [K2] (draft) — Configurar cliente Supabase y variables de entorno · domains: Backend como servicio — datos y seguridad
+- WI-008 [feature] [K3] (draft) — Migraciones iniciales de roles, restaurantes y menú con RLS · domains: Backend como servicio — datos y seguridad
+- WI-009 [feature] [K3] (draft) — Implementar AuthContext, login/registro y ProtectedRoute por rol · domains: Frontend + Supabase Auth
+- WI-010 [feature] [K2] (draft) — Carrito de un solo restaurante con Zustand · domains: Pedidos — cliente
+- WI-011 [spike] [K3] (draft) — Spike — proveedor de mapas y cálculo de costo de envío · domains: Pedidos — cliente
+- WI-012 [feature] [K3] (draft) — Checkout y creación de pedido mediante RPC atómica · domains: Pedidos — cliente
+- WI-013 [feature] [K3] (draft) — Seguimiento del estado del pedido en tiempo real · domains: Pedidos — cliente
+- WI-014 [feature] [K2] (draft) — Gestión de menú del restaurante (alta, edición y baja de platillos) · domains: Frontend — restaurante
+- WI-015 [feature] [K3] (draft) — Bandeja de pedidos entrantes con cambio de estado · domains: Frontend — restaurante
+- WI-016 [feature] [K3] (draft) — Panel de repartidor con pedidos asignados y actualización de estado · domains: Frontend — repartidor
+- WI-017 [feature] [K2] (draft) — Aprobación y suspensión de restaurantes · domains: Frontend — administración
+- WI-018 [feature] [K3] (draft) — Listado general de pedidos y cálculo de comisiones · domains: Frontend — administración
+
+## Delivery Mix
+
+Active Work Items by type:
+
+- Features: 13
+- Chores: 3
+- Spikes: 2
 
 ## Artifacts and Ownership
 
-No artifacts declare code ownership yet.
+- WI-004 [chore] owns: package.json, package-lock.json, vite.config.ts, tsconfig.app.json, eslint.config.js, src/App.test.tsx, src/test/**
 
 ## Skills
 
@@ -93,21 +140,22 @@ Read full skill definitions in `knowledge/skills/` or via the Kaddo MCP server (
 
 ## Missing Context
 
-- No work items found.
+_None — all expected context is present._
 
 ## Recommended Agent Handoff
 
-Recommended next for the **Delivery Preparation** phase:
+Recommended next for the **Active Delivery** phase:
 
-1. kaddo create --from roadmap
-2. work-item-agent
+1. work-item-agent
+2. kaddo owners suggest
 
 Next step:
 
-- Run `kaddo create --from roadmap`, then refine with work-item-agent
+- Refine WI-001 from draft to ready
 
 ## Instructions for the LLM
 
-- Materialize roadmap candidates with `kaddo create --from roadmap`.
-- Use the work-item-agent to refine them.
-- Do not implement yet.
+- Refine draft Work Items to ready.
+- Use the work-item-agent.
+- Do not implement unless the user explicitly asks.
+- Ownership is incomplete — propose `code:` globs (run `kaddo owners suggest`).
