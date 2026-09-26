@@ -5,6 +5,7 @@ import {
 } from "@/lib/stone/cart-store";
 import { cn } from "@/utils/utils";
 import { Trash2 } from "lucide-react";
+import { QuantitySelector } from "../../products/details/review/quantity-selector";
 
 interface CartItemProps {
   item: CartItemType;
