@@ -9,19 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as VendorRouteImport } from './routes/vendor'
 import { Route as storeLayoutRouteImport } from './routes/(store)/_layout'
 import { Route as AuthSignInRouteImport } from './routes/auth/sign-in'
+import { Route as storeLayoutIndexRouteImport } from './routes/(store)/_layout/index'
 import { Route as storeLayoutCartRouteImport } from './routes/(store)/_layout/cart'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -41,6 +36,11 @@ const AuthSignInRoute = AuthSignInRouteImport.update({
   path: '/auth/sign-in',
   getParentRoute: () => rootRouteImport,
 } as any)
+const storeLayoutIndexRoute = storeLayoutIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => storeLayoutRoute,
+} as any)
 const storeLayoutCartRoute = storeLayoutCartRouteImport.update({
   id: '/cart',
   path: '/cart',
@@ -53,7 +53,7 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof storeLayoutIndexRoute
   '/admin': typeof AdminRoute
   '/vendor': typeof VendorRoute
   '/auth/sign-in': typeof AuthSignInRoute
@@ -61,7 +61,7 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof storeLayoutIndexRoute
   '/admin': typeof AdminRoute
   '/vendor': typeof VendorRoute
   '/auth/sign-in': typeof AuthSignInRoute
@@ -70,33 +70,37 @@ export interface FileRoutesByTo {
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/vendor': typeof VendorRoute
   '/(store)/_layout': typeof storeLayoutRouteWithChildren
   '/auth/sign-in': typeof AuthSignInRoute
+  '/(store)/_layout/': typeof storeLayoutIndexRoute
   '/(store)/_layout/cart': typeof storeLayoutCartRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/admin' | '/vendor' | '/auth/sign-in' | '/cart' | '/api/auth/$'
+    | '/'
+    | '/admin'
+    | '/vendor'
+    | '/auth/sign-in'
+    | '/cart'
+    | '/api/auth/$'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/admin' | '/vendor' | '/auth/sign-in' | '/cart' | '/api/auth/$'
   id:
     | '__root__'
-    | '/'
     | '/admin'
     | '/vendor'
     | '/(store)/_layout'
     | '/auth/sign-in'
+    | '/(store)/_layout/'
     | '/(store)/_layout/cart'
     | '/api/auth/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   VendorRoute: typeof VendorRoute
   storeLayoutRoute: typeof storeLayoutRouteWithChildren
@@ -106,13 +110,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin': {
       id: '/admin'
       path: '/admin'
@@ -141,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthSignInRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/(store)/_layout/': {
+      id: '/(store)/_layout/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof storeLayoutIndexRouteImport
+      parentRoute: typeof storeLayoutRoute
+    }
     '/(store)/_layout/cart': {
       id: '/(store)/_layout/cart'
       path: '/cart'
@@ -159,10 +163,12 @@ declare module '@tanstack/react-router' {
 }
 
 interface storeLayoutRouteChildren {
+  storeLayoutIndexRoute: typeof storeLayoutIndexRoute
   storeLayoutCartRoute: typeof storeLayoutCartRoute
 }
 
 const storeLayoutRouteChildren: storeLayoutRouteChildren = {
+  storeLayoutIndexRoute: storeLayoutIndexRoute,
   storeLayoutCartRoute: storeLayoutCartRoute,
 }
 
@@ -171,7 +177,6 @@ const storeLayoutRouteWithChildren = storeLayoutRoute._addFileChildren(
 )
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   VendorRoute: VendorRoute,
   storeLayoutRoute: storeLayoutRouteWithChildren,
