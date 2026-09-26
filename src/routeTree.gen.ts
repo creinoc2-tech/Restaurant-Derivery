@@ -53,20 +53,20 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof storeLayoutIndexRoute
   '/admin': typeof AdminRoute
   '/vendor': typeof VendorRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/cart': typeof storeLayoutCartRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/': typeof storeLayoutIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof storeLayoutIndexRoute
   '/admin': typeof AdminRoute
   '/vendor': typeof VendorRoute
   '/auth/sign-in': typeof AuthSignInRoute
   '/cart': typeof storeLayoutCartRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/': typeof storeLayoutIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -74,30 +74,25 @@ export interface FileRoutesById {
   '/vendor': typeof VendorRoute
   '/(store)/_layout': typeof storeLayoutRouteWithChildren
   '/auth/sign-in': typeof AuthSignInRoute
-  '/(store)/_layout/': typeof storeLayoutIndexRoute
   '/(store)/_layout/cart': typeof storeLayoutCartRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/(store)/_layout/': typeof storeLayoutIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/admin'
-    | '/vendor'
-    | '/auth/sign-in'
-    | '/cart'
-    | '/api/auth/$'
+    '/admin' | '/vendor' | '/auth/sign-in' | '/cart' | '/api/auth/$' | '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/vendor' | '/auth/sign-in' | '/cart' | '/api/auth/$'
+  to: '/admin' | '/vendor' | '/auth/sign-in' | '/cart' | '/api/auth/$' | '/'
   id:
     | '__root__'
     | '/admin'
     | '/vendor'
     | '/(store)/_layout'
     | '/auth/sign-in'
-    | '/(store)/_layout/'
     | '/(store)/_layout/cart'
     | '/api/auth/$'
+    | '/(store)/_layout/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -163,13 +158,13 @@ declare module '@tanstack/react-router' {
 }
 
 interface storeLayoutRouteChildren {
-  storeLayoutIndexRoute: typeof storeLayoutIndexRoute
   storeLayoutCartRoute: typeof storeLayoutCartRoute
+  storeLayoutIndexRoute: typeof storeLayoutIndexRoute
 }
 
 const storeLayoutRouteChildren: storeLayoutRouteChildren = {
-  storeLayoutIndexRoute: storeLayoutIndexRoute,
   storeLayoutCartRoute: storeLayoutCartRoute,
+  storeLayoutIndexRoute: storeLayoutIndexRoute,
 }
 
 const storeLayoutRouteWithChildren = storeLayoutRoute._addFileChildren(

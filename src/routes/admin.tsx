@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { DomainShell } from '@/components/templates/DomainShell'
+import { DomainShell } from '@/components/templats/DomainShell'
 
 export const Route = createFileRoute('/admin')({
   component: AdminLayout,
