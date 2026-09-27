@@ -19,8 +19,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b-2 border-[#ff441f] bg-white dark:bg-background">
-      <div className="container mx-auto flex items-center gap-3 px-4 py-2.5">
-        <div className="flex shrink-0 items-center gap-3">
+      <div className="container mx-auto flex items-center gap-3 px-4 py-2">
+        <div className="@3xl:hidden">
           <MobileMenu
             navigationItems={navigationItems}
             trigger={
@@ -34,41 +34,34 @@ export default function Header() {
               </Button>
             }
           />
-
-          <Link
-            to="/"
-            className="font-black italic text-[28px] leading-none tracking-tight text-[#ff441f]"
-          >
-            Shop
-            <span className="not-italic">.</span>
-            Stack
-          </Link>
-
-          <div className="hidden h-6 w-px bg-[#e6e6e6] @3xl:block dark:bg-border" />
-
-          <Navbar items={navigationItems} />
         </div>
 
-        <label className="relative mx-auto hidden min-w-0 flex-1 @3xl:block @5xl:max-w-2xl">
+        <Link
+          to="/"
+          className="shrink-0 font-black italic text-[22px] leading-none tracking-tight text-[#ff441f] @3xl:text-[28px]"
+        >
+          Shop
+          <span className="not-italic">.</span>
+          Stack
+        </Link>
+
+        <Navbar items={navigationItems} />
+
+        <label className="relative min-w-0 flex-1">
           <span className="sr-only">Buscar</span>
-          <Utensils className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#ff441f]" />
+          <Utensils className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-[#ff441f]" />
           <Input
             type="search"
             placeholder="Comida, restaurantes, tiendas, productos..."
-            className="h-11 rounded-full border-0 bg-[#f4f4f4] pr-11 pl-11 text-sm text-[#1a1a1a] shadow-none placeholder:text-[#8a8a8a] focus-visible:ring-1 focus-visible:ring-[#ff441f]/30 dark:bg-muted dark:text-foreground"
+            className="h-9 w-full max-w-md rounded-full border-0 bg-[#f4f4f4] pr-9 pl-9 text-sm text-[#1a1a1a] shadow-none placeholder:text-[#8a8a8a] focus-visible:ring-1 focus-visible:ring-[#ff441f]/30 dark:bg-muted dark:text-foreground"
           />
-          <Search className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-[#6b6b6b]" />
+          <Search className="pointer-events-none absolute top-1/2 right-3 size-3.5 -translate-y-1/2 text-[#6b6b6b]" />
         </label>
 
         <div className="ml-auto flex shrink-0 items-center gap-2">
-          <Link to="/auth/sign-in" aria-label="Sign In">
-            <Button
-              variant="ghost"
-              size="icon"
-              type="button"
-              className="size-9 rounded-full bg-[#dff7ea] text-sm font-semibold text-[#1a1a1a] hover:bg-[#cceedd] dark:bg-muted dark:text-foreground"
-            >
-              C
+          <Link to="/auth/sign-in">
+            <Button variant="default" size="lg" type="button">
+              Sign In
             </Button>
           </Link>
 
@@ -93,19 +86,6 @@ export default function Header() {
             <ModeToggle />
           </div>
         </div>
-      </div>
-
-      <div className="px-4 pb-2.5 @3xl:hidden">
-        <label className="relative block">
-          <span className="sr-only">Buscar</span>
-          <Utensils className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-[#ff441f]" />
-          <Input
-            type="search"
-            placeholder="Comida, restaurantes, tiendas, productos..."
-            className="h-10 w-full rounded-full border-0 bg-[#f4f4f4] pr-11 pl-11 text-sm shadow-none placeholder:text-[#8a8a8a] focus-visible:ring-1 focus-visible:ring-[#ff441f]/30 dark:bg-muted"
-          />
-          <Search className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-[#6b6b6b]" />
-        </label>
       </div>
     </header>
   );

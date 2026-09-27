@@ -15,7 +15,7 @@ interface NavBarProps {
 
 export default function Navbar({
   items,
-  className = "hidden items-center gap-1 text-sm @3xl:flex",
+  className = "hidden items-center gap-2 text-sm @3xl:flex",
   linkClassName = "",
   activeLinkClassName = "",
 }: NavBarProps) {
@@ -26,12 +26,12 @@ export default function Navbar({
           key={item.to}
           to={item.to}
           className={cn(
-            "flex h-9 items-center justify-center rounded-md px-3 font-medium text-[#ff441f] text-sm transition-colors hover:bg-[#fff1ed] hover:text-[#d63612] dark:hover:bg-muted",
+            "flex h-9 items-center justify-center rounded-xl border border-dashed bg-transparent px-4 text-sm transition-all hover:border-transparent hover:bg-primary hover:text-background dark:text-body-70 dark:hover:text-background",
             linkClassName
           )}
           activeProps={{
             className: cn(
-              "bg-transparent font-semibold text-[#d63612]",
+              "h-9 rounded-xl border-transparent bg-foreground! px-4 text-background dark:bg-body-10! hover:dark:text-foreground",
               activeLinkClassName
             ),
           }}
