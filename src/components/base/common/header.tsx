@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Search, ShoppingBag, Utensils } from "lucide-react";
+import { Menu, ShoppingBag } from "lucide-react";
 import Navbar from "./navbar";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useState } from "react";
 import { ModeToggle } from "../provider/mode-toggle";
 import { useCartStore } from "@/lib/stone/cart-store";
 import CartSheet from "@/components/containers/store/cart/cart-sheet";
@@ -15,75 +15,68 @@ export default function Header() {
     { to: "/category", label: "Categories" },
   ];
 
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const { totalItems, setIsOpen } = useCartStore();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b-2 border-[#ff441f] bg-white dark:bg-background">
-      <div className="container mx-auto flex items-center gap-3 px-4 py-2">
-        <div className="@3xl:hidden">
-          <MobileMenu
-            navigationItems={navigationItems}
-            trigger={
-              <Button
-                variant="ghost"
-                size="icon"
-                aria-label="Open menu"
-                className="size-9 rounded-md text-[#1a1a1a] hover:bg-transparent hover:text-[#ff441f] dark:text-foreground"
-              >
-                <Menu className="size-6" />
-              </Button>
-            }
-          />
-        </div>
-
-        <Link
-          to="/"
-          className="shrink-0 font-black italic text-[22px] leading-none tracking-tight text-[#ff441f] @3xl:text-[28px]"
-        >
-          Shop
-          <span className="not-italic">.</span>
-          Stack
-        </Link>
-
+    <header className="@container sticky top-0 z-40 w-full border-b border-dashed bg-background backdrop-blur supports-filter:bg-background/80">
+      <div className="@container container mx-auto grid @6xl:grid-cols-3 grid-cols-2 items-center px-4 py-7">
         <Navbar items={navigationItems} />
 
-        <label className="relative min-w-0 flex-1">
-          <span className="sr-only">Buscar</span>
-          <Utensils className="pointer-events-none absolute top-1/2 left-3 size-3.5 -translate-y-1/2 text-[#ff441f]" />
-          <Input
-            type="search"
-            placeholder="Comida, restaurantes, tiendas, productos..."
-            className="h-9 w-full max-w-md rounded-full border-0 bg-[#f4f4f4] pr-9 pl-9 text-sm text-[#1a1a1a] shadow-none placeholder:text-[#8a8a8a] focus-visible:ring-1 focus-visible:ring-[#ff441f]/30 dark:bg-muted dark:text-foreground"
-          />
-          <Search className="pointer-events-none absolute top-1/2 right-3 size-3.5 -translate-y-1/2 text-[#6b6b6b]" />
-        </label>
-
-        <div className="ml-auto flex shrink-0 items-center gap-2">
-          <Link to="/auth/sign-in">
-            <Button variant="default" size="lg" type="button">
-              Sign In
-            </Button>
-          </Link>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            type="button"
-            aria-label="Open Cart"
-            onClick={() => setIsOpen(true)}
-            className="relative size-9 rounded-full text-[#1a1a1a] hover:bg-muted dark:text-foreground"
+        <div className="flex items-center justify-start @6xl:justify-center">
+          <Link
+            to="/"
+            className="font-bold @6xl:text-4xl text-xl tracking-tight dark:text-white"
           >
-            <ShoppingBag className="size-5" />
-            {totalItems > 0 && (
-              <span className="-right-0.5 -top-0.5 absolute flex h-4 w-4 items-center justify-center rounded-full bg-[#ff441f] font-medium text-[10px] text-white">
-                {totalItems}
-              </span>
-            )}
-          </Button>
-          <CartSheet />
+            Shop
+            <span className="text-4xl text-primary">.</span>
+            Stack
+          </Link>
+        </div>
 
-          <div className="hidden @4xl:block">
+        <div className="flex items-center justify-end gap-2">
+          <div className="@6xl:flex hidden items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon-lg"
+              type="button"
+              aria-label="Open Cart"
+              onClick={() => setIsOpen(true)}
+
+              className="relative"
+            >
+              <ShoppingBag className="@7xl:size-6 size-5" />
+              {totalItems > 0 && (
+                <span className="-right-1 -top-1 absolute flex h-5 w-5 items-center justify-center rounded-full bg-primary font-medium text-[10px] text-primary-foreground">
+                  {totalItems}
+                </span>
+              )}
+            </Button>
+            <CartSheet />
+
             <ModeToggle />
+
+            <Link to="/auth/sign-in">
+              <Button variant="default" size="lg" type="button">
+                Sign In
+              </Button>
+            </Link>
+          </div>
+
+          <div className="flex @6xl:hidden">
+            <MobileMenu
+              navigationItems={navigationItems}
+              trigger={
+                <Button
+                  variant="secondary"
+                  size="icon-lg"
+                  aria-label="Open menu"
+                  className="rounded-xl"
+                >
+                  <Menu className="size-5" />
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>
