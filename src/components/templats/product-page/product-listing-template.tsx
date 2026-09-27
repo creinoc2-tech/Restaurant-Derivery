@@ -1,4 +1,5 @@
 import SearchBar from "@/components/base/products/searchbar";
+import SortDropdown from "@/components/base/products/sort-dropdown";
 
 export default function ProductListingTemplate() {
   return (
