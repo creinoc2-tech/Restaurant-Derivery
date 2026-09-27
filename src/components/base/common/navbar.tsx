@@ -1,6 +1,6 @@
 import { cn } from "@/utils/utils";
 import { Link } from "@tanstack/react-router";
- 
+
 interface NavItem {
   label: string;
   to: string;
@@ -15,7 +15,7 @@ interface NavBarProps {
 
 export default function Navbar({
   items,
-  className = "hidden items-center gap-6 text-sm @5xl:flex",
+  className = "hidden items-center gap-1 text-sm @3xl:flex",
   linkClassName = "",
   activeLinkClassName = "",
 }: NavBarProps) {
@@ -26,12 +26,12 @@ export default function Navbar({
           key={item.to}
           to={item.to}
           className={cn(
-            "flex @7xl:h-16 items-center justify-center rounded-xl border border-dashed bg-transparent px-[30px] text-lg transition-all hover:border-transparent hover:bg-primary hover:text-background dark:text-body-70 dark:hover:text-background",
+            "flex h-9 items-center justify-center rounded-md px-3 font-medium text-[#ff441f] text-sm transition-colors hover:bg-[#fff1ed] hover:text-[#d63612] dark:hover:bg-muted",
             linkClassName
           )}
           activeProps={{
             className: cn(
-              "@7xl:h-16 h-12 rounded-xl text-lg px-[30px] bg-foreground! text-background border-transparent dark:bg-body-10! hover:dark:text-foreground",
+              "bg-transparent font-semibold text-[#d63612]",
               activeLinkClassName
             ),
           }}

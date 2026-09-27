@@ -18,12 +18,21 @@ export function MobileMenu({ navigationItems, trigger }: MobileMenuProps) {
   return (
     <Sheet>
       <SheetTrigger render={trigger} />
-      <SheetContent side="right" className="p-6">
-        <Navbar items={navigationItems} className="flex flex-col gap-3" />
+      <SheetContent side="right" className="border-l-0 p-6">
+        <Navbar
+          items={navigationItems}
+          className="flex flex-col items-stretch gap-1"
+          linkClassName="h-11 justify-start rounded-lg px-4 text-base"
+        />
         <div className="mt-6 flex items-center gap-3">
           <SheetClose
             render={
-              <Button variant="outline" size="icon" aria-label="Open cart" />
+              <Button
+                variant="ghost"
+                size="icon"
+                aria-label="Open cart"
+                className="size-9 rounded-full"
+              />
             }
           >
             <ShoppingBag className="size-5" />
