@@ -41,6 +41,7 @@ ownership-agent (propose code: globs) → implementation-agent (build).
 
 - `capability-agent.md` — extract/propose system capabilities.
 - `architecture-agent.md` — reconstruct/propose the architecture baseline.
+- `store-homepage-structure-agent.md` — describe the real parent-child tree of `(store)/_layout` and `(store)/_layout/index` only.
 - `roadmap-agent.md` — propose roadmap candidates.
 - `legacy-agent.md` — analyze risks/unknowns before changing legacy code.
 - `adr-agent.md` — propose candidate architecture decisions.
