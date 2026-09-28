@@ -8,7 +8,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import type { FilterState } from "@/lib/store/product-filters-store";
+ import FilterSidebar from "./filter-sidebar";
+import type { FilterState } from "@/lib/stone/product-filters-store";
 
 interface MobileFilterDrawerProps {
   filters: FilterState;

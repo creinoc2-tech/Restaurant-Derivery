@@ -21,9 +21,7 @@ export default function FilterGroup({
 }: FilterGroupProps) {
   return (
     <Accordion
-      type="single"
-      collapsible
-      defaultValue={defaultOpen ? id : undefined}
+      defaultValue={defaultOpen ? [id] : []}
       className="w-full"
     >
       <AccordionItem value={id} className="border-b-0">
