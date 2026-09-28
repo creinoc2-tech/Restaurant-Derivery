@@ -10,8 +10,8 @@ export interface ActiveFilter {
 
 interface ActiveFilterChipsProps {
   filters: ActiveFilter[];
-  onRemove: (id: string, type: string) => void;
-  onClearAll: () => void;
+  onRemove?: (id: string, type: string) => void;
+  onClearAll?: () => void;
 }
 
 export default function ActiveFilterChips({

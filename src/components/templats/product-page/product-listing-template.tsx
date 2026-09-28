@@ -3,9 +3,12 @@ import SortDropdown from "@/components/base/products/sort-dropdown";
 import { useProductFilters } from "@/lib/stone/product-filters-store";
 import MobileFilterDrawer from "./mobile-filter-drawer";
 import FilterSidebar from "./filter-sidebar";
+import ActiveFilterChips from "@/components/base/products/active-filter-chips";
 
 export default function ProductListingTemplate() {
-  const { filters, updateFilter, totalProducts } = useProductFilters();
+  const { filters, updateFilter, totalProducts , activeFilters  ,
+    removeFilter , clearAllFilters
+  } = useProductFilters();
   return (
     <div className="@container container mx-auto px-4 py-8">
       <div className="flex flex-col gap-6">
