@@ -2,7 +2,7 @@
 type: current-state
 id: product-filters-store
 status: draft
-updated_at: 2026-09-27
+- updated_at: 2026-09-27
 ---
 
 # product-filters-store.ts — para que sirve cada parte
